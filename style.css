@@ -1,0 +1,227 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body {
+    background: linear-gradient(#000000 0%, #444444 33.33%, #727272 66.67%, #a0a0a0 100%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* Adiciona um padding para garantir espaçamento nas laterais em telas menores */
+    position: relative;
+}
+
+body::before {
+    background-image: url("img/images.jpg");
+    background-position: center;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.container {
+    width: 80%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+    justify-content: flex-start;
+    border-radius: 24px;
+    border: 1px solid #000000;
+    box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
+    background-image: url("img/image-removebg-preview.png"), url("img/image-removebg-preview\ \(1\).png"); /* Adiciona a segunda imagem à esquerda */
+    background-size: contain, contain; /* Ajusta o tamanho das imagens */
+    background-repeat: no-repeat, no-repeat; /* Remove a repetição de ambas as imagens */
+    background-position: right center, left center; /* Imagem à direita e à esquerda */
+    position: relative;
+    opacity: 0.9;
+}
+
+
+/* Adicionei para centralizar a imagem do galo no topo */
+.container__imagem-pessoa {
+    display: block;
+    margin: 0 auto 20px auto; /* Centraliza a imagem e adiciona espaço abaixo */
+    max-width: 250px; /* Aumenta o tamanho da imagem */
+}
+
+/* Conteúdo abaixo da imagem */
+.container__conteudo {
+    display: flex;
+    flex-direction: column; /* Alinha as informações em coluna abaixo da imagem */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.container__informacoes {
+    flex: 1;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container__botao {
+    border-radius: 16px;
+    background: #000000;
+    padding: 16px 24px;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    border: none;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.container__texto {
+    margin: 16px 0;
+}
+
+.container__input {
+    width: 100%;
+    height: 72px;
+    border-radius: 16px;
+    background-color: #FFF;
+    border: none;
+    color: #000000;
+    padding: 2rem;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+}
+
+.container__botoes {
+    display: flex;
+    gap: 2em;
+}
+
+h1 {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 72px;
+    padding-bottom: 3rem;
+    text-align: center;
+}
+
+p,
+button {
+    font-family: 'Inter', sans-serif;
+}
+
+.texto__paragrafo {
+    font-size: 32px;
+    font-weight: 400;
+    text-align: center;
+}
+
+button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+/* Responsividade para telas menores */
+@media screen and (max-width: 1250px) {
+    h1 {
+        font-size: 50px;
+    }
+
+    .container__botao {
+        font-size: 16px;
+    }
+
+    .texto__paragrafo {
+        font-size: 24px;
+    }
+
+    .container__imagem-pessoa {
+        max-width: 200px; /* Reduz o tamanho da imagem em telas menores */
+    }
+
+    .container__conteudo {
+        display: block;
+        position: static;
+    }
+
+    .container__informacoes {
+        padding: 1rem;
+    }
+
+    .container {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container__input {
+        height: 50px;
+        font-size: 18px;
+        padding: 1rem;
+    }
+
+    .container__botao {
+        padding: 12px 20px;
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .texto__paragrafo {
+        font-size: 20px;
+    }
+
+    .container__imagem-pessoa {
+        max-width: 150px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container__input {
+        height: 40px;
+        font-size: 16px;
+        padding: 0.8rem;
+    }
+
+    .container__botao {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .texto__paragrafo {
+        font-size: 18px;
+    }
+
+    .container__informacoes {
+        padding: 0.5rem;
+    }
+
+    .container {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .container__imagem-pessoa {
+        display: block;
+        margin: 0 auto 0% auto; /* Centraliza a imagem e adiciona espaço abaixo */
+        width: 1000px; /* Ajuste o tamanho da imagem diretamente */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+    
+    
+}
